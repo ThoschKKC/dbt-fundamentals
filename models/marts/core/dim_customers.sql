@@ -1,11 +1,11 @@
 
 with customers
 as (
-    select * from {{ref('stg_customers')}}
+    select customer_id, first_name, last_name from {{ref('stg_customers')}}
 ),
 orders
 as (
-    select * from {{ref('stg_orders')}}
+    select customer_id, order_date, order_id from {{ref('stg_orders')}}
     )
 ,customer_orders as (
 
